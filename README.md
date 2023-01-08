@@ -1,1 +1,1 @@
-# udacity-building-ci-cd
+# udacity-building-CI-CD
