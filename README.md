@@ -56,12 +56,14 @@ CI: Set Up Azure Cloud Shell
     python app.py
     
     ![windows local setup python](https://user-images.githubusercontent.com/20974800/211339171-518f09bb-5871-4a2b-83a7-b8bd2d43a10e.png)
-  
-Deploy the app to an Azure App Service
-  
+    
+    
+    Deploy the app to an Azure App Service    
+    
     Create an App Service in Azure. In this example the App Service is called udacity-flask-ml-service
-
+    
     az webapp up --name udacity-flask-ml-service
+    
     
     ![deploying web app](https://user-images.githubusercontent.com/20974800/211340887-845ec55b-79e4-4309-bfac-d0612b4b1ab1.png)
     
@@ -70,68 +72,85 @@ Deploy the app to an Azure App Service
     
         
     ![Initial changes of home page](https://user-images.githubusercontent.com/20974800/211341491-2509b1c7-39af-4fa4-9c8b-180b9d849ce0.png)
-
+    
 Continuous Delivery
+Prerequisites
 
-    Prerequisites
-    
-      Logged into the https://portal.azure.com/
+Logged into the https://portal.azure.com/
 
-      Logged into the https://dev.azure.com/ in a separate browser tab.
+Logged into the https://dev.azure.com/ in a separate browser tab.
 
-    Create an Azure DevOps project
+Create an Azure DevOps project
 
-    Next, we'll need to create an Azure DevOps project and connect to Azure. The screenshots below show the steps, but if you need to, you can also refer to  
-    the official documentation for more detail.
-        
-    1. Create new project and name it
-    
-    ![image](https://user-images.githubusercontent.com/20974800/211342890-90e626d8-2212-41d4-bc37-486e8d1b6b15.png)
+ Next, we'll need to create an Azure DevOps project and connect to Azure. The screenshots below show the steps, but if you need to, you can also refer to  
+ the official documentation for more detail.
 
 
-    2. Ensure you set up a new service connection via Azure Resource Manager and Pipeline
-    
-    
-    3. Select Pipeline and create a new one.
-    
-    ![image](https://user-images.githubusercontent.com/20974800/211342969-d65ec895-4169-4dd6-a356-f46ff899937c.png)
-    
-    4. Create the GitHub Integration
-    
-    ![image](https://user-images.githubusercontent.com/20974800/211343318-1102681f-8be7-48ad-bcdb-eee420fff6b8.png)
-    
-    5. Configure Python to Linux Web App on Azure
-    
-    ![image](https://user-images.githubusercontent.com/20974800/211343424-75df77a3-a946-432f-bb30-948b8baebd50.png)
-    
-    6: Set Up the Continuous Delivery Workflow
-    
-    ![review your pipeline yaml](https://user-images.githubusercontent.com/20974800/211344072-0040458e-9067-4edb-8fd8-1a9530f43d1b.png)
+1. Create new project and name it
+
+![image](https://user-images.githubusercontent.com/20974800/211342890-90e626d8-2212-41d4-bc37-486e8d1b6b15.png)
+
+
+2. Ensure you set up a new service connection via Azure Resource Manager and Pipeline
+
+
+3. Select Pipeline and create a new one.
+
+![image](https://user-images.githubusercontent.com/20974800/211342969-d65ec895-4169-4dd6-a356-f46ff899937c.png)
+
+4. Create the GitHub Integration
+
+![image](https://user-images.githubusercontent.com/20974800/211343318-1102681f-8be7-48ad-bcdb-eee420fff6b8.png)
+
+5. Configure Python to Linux Web App on Azure
+
+![image](https://user-images.githubusercontent.com/20974800/211343424-75df77a3-a946-432f-bb30-948b8baebd50.png)
+
+6: Set Up the Continuous Delivery Workflow
+
+![review your pipeline yaml](https://user-images.githubusercontent.com/20974800/211344072-0040458e-9067-4edb-8fd8-1a9530f43d1b.png)
+
+After successful pipeline creation azure-pipeline.yml file is created
+
+![azure pipeline file creation in github](https://user-images.githubusercontent.com/20974800/211351508-58419bf3-28d9-44e0-ade3-ac2a96bd19c1.png)
+
+The Deploy Web App stage in our example will need your permission to deploy the build artifact to the Azure Web App. You can update the pipline permissions for the current user in the Pipelines
+
+![permission web app](https://user-images.githubusercontent.com/20974800/211354364-2168afed-0970-4bfa-a68d-361a9346ab3c.png)
 
 
 
+Azure pipeline build stage completed
+![latest app py build process completed](https://user-images.githubusercontent.com/20974800/211352603-75478524-5051-4027-9117-5f103839d76b.png)
 
-* Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
+Azure pipeline deployment stage completed
+![latest app py build deployment completed](https://user-images.githubusercontent.com/20974800/211352668-c063cb38-7c1a-4025-abd6-40b9672f2823.png)
 
-* Running Azure App Service from Azure Pipelines automatic deployment
+Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
 
-* Successful prediction from deployed flask app in Azure Cloud Shell.  [Use this file as a template for the deployed prediction](https://github.com/udacity/nd082-Azure-Cloud-DevOps-Starter-Code/blob/master/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/make_predict_azure_app.sh).
+After successful deployment the change are reflected
+
+Running Azure App Service from Azure Pipelines automatic deployment
+
+![latest app py home page reflection](https://user-images.githubusercontent.com/20974800/211352960-d992ae89-b61f-4118-9bd8-81a273761972.png)
+
+Successful prediction from deployed flask app in Azure Cloud Shell.  [Use this file as a template for the deployed prediction](https://github.com/udacity/nd082-Azure-Cloud-DevOps-Starter-Code/blob/master/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/make_predict_azure_app.sh).
 The output should look similar to this:
 
-```bash
-udacity@Azure:~$ ./make_predict_azure_app.sh
-Port: 443
-{"prediction":[20.35373177134412]}
-```
+![latest app py predict api reflection](https://user-images.githubusercontent.com/20974800/211352988-f9ce1022-0342-4603-a961-46a23598bad6.png)
 
-* Output of streamed log files from deployed application
+Logs
 
-> 
+You can inspect the logs from your running application here:
 
-## Enhancements
+https://<app-name>.scm.azurewebsites.net/api/logs/docker
 
-<TODO: A short description of how to improve the project in the future>
+![image](https://user-images.githubusercontent.com/20974800/211355373-be2d8f7c-f77a-4842-b5c2-d5f6263f3b96.png)
 
+
+Load test an application using Locust.
+  
+  
 ## Demo 
 
 <TODO: Add link Screencast on YouTube>
