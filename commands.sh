@@ -8,6 +8,7 @@ pip install virtualenv
 virtualenv ~/.myrepo
 source ~/.myrepo/bin/activate
 python --version
+make all
 deactivate
 
 
