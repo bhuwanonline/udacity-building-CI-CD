@@ -155,7 +155,16 @@ https://<app-name>.scm.azurewebsites.net/api/logs/docker
 
 ##Load test an application using Locust.
   
-  
+Create a file name locustfile.py within your repo.
 
+Write tests to check your application
+
+Install the dependency using pip i.e pip install locust
+
+Run locust command on cmd to start Locust
+
+  ![image](https://user-images.githubusercontent.com/20974800/211491030-fb51d2c6-c52d-423b-9f98-b634215eb74f.png)
+
+  ![image](https://user-images.githubusercontent.com/20974800/211492078-f68b6b01-ab00-48ee-95aa-fffcc68453ff.png)
 
 
