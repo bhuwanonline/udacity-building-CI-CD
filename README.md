@@ -10,6 +10,9 @@ In this project, you will build a Github repository from scratch and create a sc
 
 * A link to a Trello board for the project
   https://trello.com/invite/b/a7cWVggK/ATTIb7eb8d5d00ce5c1fe945876cfea0d4ed8A8374C2/building-a-ci-cd-pipeline
+
+* A link to a spreadsheet that includes the original and final project plan 
+  https://github.com/bhuwanonline/udacity-building-CI-CD/blob/main/project-schedule.xlsx  
   
   Demo link --> https://youtu.be/F1hixPajsCA
 
@@ -150,11 +153,9 @@ https://<app-name>.scm.azurewebsites.net/api/logs/docker
 ![image](https://user-images.githubusercontent.com/20974800/211355373-be2d8f7c-f77a-4842-b5c2-d5f6263f3b96.png)
 
 
-Load test an application using Locust.
+##Load test an application using Locust.
   
   
-## Demo 
 
-<TODO: Add link Screencast on YouTube>
 
 
